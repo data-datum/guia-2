@@ -1,0 +1,93 @@
+---
+title: "Práctica de R"
+author: "Probabilidad y Estadística"
+date: "Ingenería Industrial - Facultad de Ciencias Agrarias"
+output: pdf_document
+---
+```{r, include=FALSE}
+options(tinytex.verbose = TRUE)
+```
+
+# Tipos de datos y Estructura de datos
+
+## Tipo de datos
+
+_En R, todo son objetos_
+
+Estos objetos se crean a partir de objetos más simples.
+
+Los objetos más simples se llaman atómicos:
+
+- character(cadena de caracteres)
+- numeric (números reales)
+- integer(números enteros)
+- complex (números complejos)
+- logical (lógicos o booleanos, toman valores de TRUE o FALSE)
+
+## Estructura de datos
+
+### Vectores
+- Los vectores vectores son arreglos ordenados en los cuales se puede almacenar información de tipo numérico (variable cuantitativa), alfanumérico (variable cualitativa) o lógico (TRUE o FALSE), pero no mezclas de éstos. 
+- La función de R para crear un vector es __c()__ y que significa concatenar; dentro de los paréntesis de esta función se ubica la información a almacenar. Una vez construído el vector se acostumbra a etiquetarlo con un nombre corto y representativo de la información que almacena, la asignación se hace por medio del operador <- entre el nombre y el vector.
+
+* Vector de enteros
+```{r }
+c(3,2,5)
+```
+
+```{r }
+numeros<-c(3,2,5)
+numeros
+```
+
+* Vector de decimales
+```{r }
+c(3.2,2.4,5.8)
+```
+
+* Vector de caracteres
+```{r }
+c("Ana","Sofía","Pedro","Juan")
+```
+
+* Vector de booleanos
+```{r }
+c(TRUE, FALSE, TRUE, FALSE)
+```
+
+
+### Matrices
+
+- Las matrices son arreglos rectangulares de filas y columnas con información numérica, alfanumérica o lógica. Para construir una matriz se usa la función __matrix( )__. Por ejemplo, para crear una matriz de 4 filas y 5 columnas (de dimensión 4×5) con los primeros 20 números positivos se escribe el código siguiente en la consola.
+
+```{r }
+mimatriz <- matrix(data=1:20, nrow=4, ncol=5)
+mimatriz
+```
+
+
+### Dataframes o Marco de datos
+
+- Data.frame es uno de los objetos más utilizados en R, porque permite agrupar vectores con información de diferente tipo (numérica, alfanumérica o lógica) en un mismo objeto, la única restricción es que los vectores deben tener la misma longitud. Para crear un marco de datos se usa la función __data.frame()__
+
+- Paso 1: creamos los vectores
+```{r }
+#Creamos en primer lugar tres vectores
+alumnos<-c("Ana","Sofía","Luis", "Pedro","Juan")
+edad<-c(15, 19, 13, 18, 20)
+deporte<-c(TRUE, TRUE, FALSE, FALSE, TRUE)
+comic.fav<-c('Superman', 'Superman', 'Batman', 'Spiderman', 'Batman')
+```
+
+- Paso 2: creamos un data.frame a partir de los vectores
+```{r }
+#Usamos la función data.frame
+mimarco <- data.frame(alumnos, edad, deporte, comic.fav)
+mimarco
+```
+
+
+### Bibliografía 
+
+* Hernández, Freddy; Usuga, Olga (2019) Manual de R. Disponible en https://fhernanb.github.io/Manual-de-R/ 
+* Santana, Julio Sergio; Farfán, Efraín Mateos (2014) El arte de programar en R. Un lenguaje para la estadística. https://cran.r-project.org/doc/contrib/Santana_El_arte_de_programar_en_R.pdf
